@@ -96,13 +96,13 @@
         name: kubelet={{ hostvars[inventory_hostname]['k8s_version'] }}-00
         state: present
         update_cache: true
-        allow_downgrade: true
+        # allow_downgrade: true
 
     - name: install kubeadm
       apt:
         name: kubeadm={{ hostvars[inventory_hostname]['k8s_version'] }}-00
         state: present
-        allow_downgrade: true
+        # allow_downgrade: true
 
     - name: prevent packages from being upgraded
       dpkg_selections:
@@ -144,7 +144,7 @@
         name: kubectl={{ hostvars[inventory_hostname]['k8s_version'] }}-00
         state: present
         force: yes
-        allow_downgrade: true
+        # allow_downgrade: true
 
     - name: prevent packages from being upgraded
       dpkg_selections:
